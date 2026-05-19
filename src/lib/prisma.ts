@@ -1,7 +1,21 @@
 import { PrismaClient } from '@prisma/client'
 
+const getDbUrl = () => {
+  let url = process.env.POSTGRES_URL || process.env.DATABASE_URL || '';
+  if (url && !url.includes('pgbouncer=true')) {
+    url += url.includes('?') ? '&pgbouncer=true' : '?pgbouncer=true';
+  }
+  return url;
+}
+
 const prismaClientSingleton = () => {
-  return new PrismaClient()
+  return new PrismaClient({
+    datasources: {
+      db: {
+        url: getDbUrl(),
+      },
+    },
+  })
 }
 
 declare global {
