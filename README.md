@@ -13,6 +13,8 @@ GovernMINT is a high-performance, premium web application built for academic fin
 7. **Immutable Audit Trail**: SHA-256 hash-chaining of database transactions.
 8. **Automated Reminders**: Built-in notifications and Resend HTML invite dispatches.
 9. **Analytics Dashboard**: Rich visualization of committee engagement and performance.
+10. **Public User Registration**: A self-serve `/signup` page for new users to create accounts.
+11. **Admin Audit Logs**: Dedicated view for administrators to track platform activity and security events.
 
 ## 🛠️ Technical Stack
 
